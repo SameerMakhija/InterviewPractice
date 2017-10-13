@@ -18,4 +18,4 @@ function unique(getArray) {
   },[]);
 }
 
-unique(valueArray); // [1,2];
+console.log("[1,1,2,2] Unique Values = "+ unique(valueArray)); // [1,2];
