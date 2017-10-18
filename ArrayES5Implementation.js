@@ -34,3 +34,22 @@ Array.prototype.myMap = function (callback) {
                                 });
   console.log(`mappedArray = ${JSON.stringify(mappedArray)}`);
 })();
+
+//Array - Filter
+const numberArray = [5,7,10,2,25,15];
+Array.prototype.myFilter = function (callback, context) {
+  let result = [];
+  for(let i = 0; i<this.length; i++) {
+    if(callback.call(context, this[i], i, this)){
+      result.push(this[i]);
+    }
+  }
+  return result;
+};
+
+(function() {
+  const filteredArray = numberArray.myFilter(function(value){
+    return value > 10;
+  });
+  console.log(`Filtered Array > 10 = ${JSON.stringify(filteredArray)}`);
+})();
