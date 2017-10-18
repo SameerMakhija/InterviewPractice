@@ -105,3 +105,36 @@ Array.prototype.mySome = function (callback, context){
   console.log(`Some | allNumberAbove10 = All values > 10 =  ${resultAbove10}`);
   console.log(`Some | numberArrayResult = All values > 10 =  ${numberArrayResult}`);
 })();
+
+
+//Array - reduce
+Array.prototype.myReduce = function (callback, initialValue) {
+  let result = initialValue ? initialValue : undefined ;
+  for(let i=0; i<this.length; i++) {
+    if(result){
+      result = callback.call(undefined, result, this[i], i, this);
+    } else {
+      result = this[i];
+    }
+  }
+  return result;
+};
+
+const sumAllNumberArrayValues = numberArray.myReduce(function(result, value){
+  return result + value;
+});
+const sumAllNumberAbove10Values = allNumberAbove10.myReduce(function(result, value){
+  return result + value;
+}, 10);
+
+console.log(`Reduce | total sum of numberArray = ${sumAllNumberArrayValues}`);
+console.log(`Reduce | total sum of allNumberAbove10 = ${sumAllNumberAbove10Values}`);
+
+const flattened = [
+    [0, 1],
+    [2, 3],
+    [4, 5]
+].reduce(function(a, b) {
+    return a.concat(b);
+});
+console.log(`Reduce | flattened = ${flattened}`); //[ 0, 1, 2, 3, 4, 5 ]
