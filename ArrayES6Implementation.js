@@ -1,5 +1,9 @@
 /*
 ES5 Array Implementations :-  https://gist.github.com/alexhawkins/28aaf610a3e76d8b8264
+
+  Array.map
+  Array.filter
+
 */
 
 
@@ -32,3 +36,17 @@ function multiply(n) {
 
 console.log(`ES6 Map => ${JSON.stringify(myES6Map(testNumbers, multiply))}`);     // "[2,4,6]"
 console.log(`ES6 Map => ${JSON.stringify(myES6Map2(testNumbers, multiply))}`);    // "[2,4,6]"
+
+
+//Array filter
+function myES6Filter([head, ...tail], fn) {
+  const newHead = fn(head) ? [head] : [];
+  return tail.length ? [...newHead, ...myES6Filter(tail, fn)] :  newHead;
+}
+
+const filterNumbers = [1,2,13,11,10];
+function greater10(n) {
+  return n > 10
+}
+
+console.log(`ES6 Filter => ${JSON.stringify(myES6Filter(filterNumbers, greater10))}`);     // "[13,11]"
