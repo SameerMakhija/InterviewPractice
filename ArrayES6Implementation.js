@@ -50,3 +50,13 @@ function greater10(n) {
 }
 
 console.log(`ES6 Filter => ${JSON.stringify(myES6Filter(filterNumbers, greater10))}`);     // "[13,11]"
+
+//Array Join
+function myES6Join([head, ...tail], separator = `,`) {
+  if(head === undefined && !tail.length) {
+    return '';
+  }
+  return tail.length ? `${head}${separator}${myES6Join(tail, separator)}` : head;
+}
+
+console.log(`ES6 Join => ${myES6Join(filterNumbers, '-')}`);     // "1-2-13-11-10"
