@@ -60,3 +60,6 @@ function myES6Join([head, ...tail], separator = `,`) {
 }
 
 console.log(`ES6 Join => ${myES6Join(filterNumbers, '-')}`);     // "1-2-13-11-10"
+
+
+//Array reduce
