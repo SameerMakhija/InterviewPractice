@@ -19,19 +19,20 @@ Array.prototype.myReduce = function (callback, initialValue) {
   const sumAllNumberArrayValues = numberArray.myReduce(function(result, value){
     return result + value;
   });
+
   const sumAllNumberAbove10Values = allNumberAbove10.myReduce(function(result, value){
     return result + value;
   }, 10);
-
-  console.log(`Reduce | total sum of numberArray = ${sumAllNumberArrayValues}`);
-  console.log(`Reduce | total sum of allNumberAbove10 = ${sumAllNumberAbove10Values}`);
 
   const flattened = [
       [0, 1],
       [2, 3],
       [4, 5]
-  ].reduce(function(a, b) {
+  ].myReduce(function(a, b) {
       return a.concat(b);
   });
-  console.log(`Reduce | flattened = ${flattened}`); //[ 0, 1, 2, 3, 4, 5 ]
+
+  console.log(`ES5 Reduce | total sum of numberArray = ${sumAllNumberArrayValues}`);
+  console.log(`ES5 Reduce | total sum of allNumberAbove10 = ${sumAllNumberAbove10Values}`);
+  console.log(`ES5 Reduce | flattened = ${flattened}`); //[ 0, 1, 2, 3, 4, 5 ]
 })();

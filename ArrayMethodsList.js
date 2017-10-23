@@ -37,12 +37,12 @@ Iteration methods :-
 # Array.prototype.every()        => Returns true if every element in this array satisfies the provided testing function.
 #$ Array.prototype.map()          => Creates a new array with the results of calling a provided function on every element in this array.
 # Array.prototype.some()         => Returns true if at least one element in this array satisfies the provided testing function.
-# Array.prototype.reduce()       => Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a single value.
+#$ Array.prototype.reduce()       => Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a single value.
+# Array.prototype.find()         => Returns the found value in the array, if an element in the array satisfies the provided testing function or undefined if not found.
+# Array.prototype.findIndex()    => Returns the found index in the array, if an element in the array satisfies the provided testing function or -1 if not found.
 
 
 Array.prototype.entries()      => Returns a new Array Iterator object that contains the key/value pairs for each index in the array.
-Array.prototype.find()         => Returns the found value in the array, if an element in the array satisfies the provided testing function or undefined if not found.
-Array.prototype.findIndex()    => Returns the found index in the array, if an element in the array satisfies the provided testing function or -1 if not found.
 Array.prototype.keys()         => Returns a new Array Iterator that contains the keys for each index in the array.
 Array.prototype.reduceRight()  => Apply a function against an accumulator and each value of the array (from right-to-left) as to reduce it to a single value.
 Array.prototype.values()       => Returns a new Array Iterator object that contains the values for each index in the array.
